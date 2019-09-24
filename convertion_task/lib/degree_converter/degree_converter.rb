@@ -17,7 +17,7 @@ class DegreeConverter
     end
   end
 
-  def get_conversion(unit)
+  def conversion(unit)
     case unit
     when 'C' || 'c'
       @value.convert_to_celsius

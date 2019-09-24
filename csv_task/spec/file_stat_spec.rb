@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-describe StatGetter, '#get_max' do
-  it 'returns 20 if init with file_spec.csv' do
-    expect(StatGetter.new('spec/file_spec.csv').get_max).to eq 20
+describe StatGetter do
+  subject do
+    StatGetter.new('spec/file_spec.csv')
   end
-end
 
-describe StatGetter, '#get_min' do
-  it 'returns 20 if init with file_spec.csv' do
-    expect(StatGetter.new('spec/file_spec.csv').get_min).to eq 10
+  describe '#get_max' do
+    it { expect(subject.get_max).to eq 20 }
   end
-end
 
-describe StatGetter, '#get_average' do
-  it 'returns 15 if init with file_spec.csv' do
-    expect(StatGetter.new('spec/file_spec.csv').get_average).to eq 15
+  describe '#get_min' do
+    it { expect(subject.get_min).to eq 10 }
+  end
+
+  describe '#get_average' do
+    it { expect(subject.get_average).to eq 15 }
   end
 end

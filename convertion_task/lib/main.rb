@@ -14,4 +14,4 @@ system_from = checker.unit_is_true?(gets.chomp)
 puts('Enter the number system in which you want to translate (C, K, F):')
 system_to = checker.unit_is_true?(gets.chomp)
 
-print DegreeConverter.new(value.to_f, system_from).get_conversion(system_to), "\n"
+print DegreeConverter.new(value.to_f, system_from).conversion(system_to), "\n"

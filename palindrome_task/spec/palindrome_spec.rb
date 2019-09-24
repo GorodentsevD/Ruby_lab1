@@ -2,12 +2,20 @@
 
 require 'spec_helper'
 
-describe Palindrome, '#palindrome?' do
-  it 'returns true when check word "wow"' do
-    expect(Palindrome.new.palindrome?('wow')).to eq true
+describe Palindrome do
+  subject do
+    Palindrome.new
   end
 
-  it 'returns false when check word "wod"' do
-    expect(Palindrome.new.palindrome?('wod')).to eq false
+  describe '.palindrome?' do
+    context 'returns true when check word "wow"' do
+      let(:word) { 'wow' }
+      it { expect(subject.palindrome?(word)).to be true }
+    end
+
+    context 'returns false when check word "wod"' do
+      let(:word) { 'wod' }
+      it { expect(subject.palindrome?(word)).to be false }
+    end
   end
 end
